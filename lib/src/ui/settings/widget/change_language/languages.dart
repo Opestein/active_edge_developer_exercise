@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-class TimbalaLanguages {
-  const TimbalaLanguages(this.index, this.label);
+class ActiveEdgeLanguages {
+  const ActiveEdgeLanguages(this.index, this.label);
 
   final int index;
   final String label;
@@ -13,7 +13,7 @@ class TimbalaLanguages {
   @override
   bool operator ==(dynamic other) {
     if (runtimeType != other.runtimeType) return false;
-    final TimbalaLanguages typedOther = other;
+    final ActiveEdgeLanguages typedOther = other;
     return index == typedOther.index && label == typedOther.label;
   }
 
@@ -26,7 +26,8 @@ class TimbalaLanguages {
   }
 }
 
-const List<TimbalaLanguages> kAllTimbalaLanguageValues = <TimbalaLanguages>[
-  TimbalaLanguages(0, 'English'),
-  TimbalaLanguages(1, 'French'),
+const List<ActiveEdgeLanguages> kAllActiveEdgeLanguageValues =
+    <ActiveEdgeLanguages>[
+  ActiveEdgeLanguages(0, 'English'),
+  ActiveEdgeLanguages(1, 'French'),
 ];

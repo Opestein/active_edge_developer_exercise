@@ -5,17 +5,17 @@
 import 'package:active_edge_developer_exercise/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class TimbalaTheme {
-  const TimbalaTheme._(this.name, this.data);
+class ActiveEdgeTheme {
+  const ActiveEdgeTheme._(this.name, this.data);
 
   final String name;
   final ThemeData data;
 }
 
-final TimbalaTheme kDarkGalleryTheme =
-    TimbalaTheme._('Dark', _buildDarkTheme());
-final TimbalaTheme kLightGalleryTheme =
-    TimbalaTheme._('Light', _buildLightTheme());
+final ActiveEdgeTheme kDarkGalleryTheme =
+    ActiveEdgeTheme._('Dark', _buildDarkTheme());
+final ActiveEdgeTheme kLightGalleryTheme =
+    ActiveEdgeTheme._('Light', _buildLightTheme());
 
 TextTheme _buildLightTextTheme(TextTheme base) {
   return base
@@ -143,9 +143,9 @@ ThemeData _buildDarkTheme() {
       cardColor: textFieldColor,
       textSelectionColor: Colors.white);
   return base.copyWith(
-    textTheme: _buildDarkTextTheme(base.textTheme),
-    primaryTextTheme: _buildDarkTextTheme(base.primaryTextTheme),
-    accentTextTheme: _buildDarkTextTheme(base.accentTextTheme),
+//    textTheme: _buildDarkTextTheme(base.textTheme),
+//    primaryTextTheme: _buildDarkTextTheme(base.primaryTextTheme),
+//    accentTextTheme: _buildDarkTextTheme(base.accentTextTheme),
     primaryIconTheme: base.primaryIconTheme.copyWith(
       color: secondaryDarkColor,
     ),
@@ -190,9 +190,9 @@ ThemeData _buildLightTheme() {
     textSelectionColor: Colors.black45,
   );
   return base.copyWith(
-    textTheme: _buildLightTextTheme(base.textTheme),
-    primaryTextTheme: _buildLightTextTheme(base.primaryTextTheme),
-    accentTextTheme: _buildLightTextTheme(base.accentTextTheme),
+//    textTheme: _buildLightTextTheme(base.textTheme),
+//    primaryTextTheme: _buildLightTextTheme(base.primaryTextTheme),
+//    accentTextTheme: _buildLightTextTheme(base.accentTextTheme),
     primaryIconTheme: base.primaryIconTheme.copyWith(
       color: secondaryColor,
     ),

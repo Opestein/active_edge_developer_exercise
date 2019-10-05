@@ -44,15 +44,15 @@ class _TextScaleFactorItemState extends State<TextScaleFactorItem> {
               ],
             ),
           ),
-          PopupMenuButton<TimbalaTextScaleValue>(
+          PopupMenuButton<ActiveEdgeTextScaleValue>(
             padding: const EdgeInsetsDirectional.only(end: 16.0),
             icon: const Icon(Icons.arrow_drop_down),
             color: isDark ? primaryDarkColor : Colors.white,
             itemBuilder: (BuildContext context) {
-              return kAllGalleryTextScaleValues
-                  .map<PopupMenuItem<TimbalaTextScaleValue>>(
-                      (TimbalaTextScaleValue scaleValue) {
-                return PopupMenuItem<TimbalaTextScaleValue>(
+              return kAllActiveEdgeTextScaleValues
+                  .map<PopupMenuItem<ActiveEdgeTextScaleValue>>(
+                      (ActiveEdgeTextScaleValue scaleValue) {
+                return PopupMenuItem<ActiveEdgeTextScaleValue>(
                   value: scaleValue,
                   child: Text(
                     scaleValue.label,
@@ -60,7 +60,7 @@ class _TextScaleFactorItemState extends State<TextScaleFactorItem> {
                 );
               }).toList();
             },
-            onSelected: (TimbalaTextScaleValue scaleValue) {
+            onSelected: (ActiveEdgeTextScaleValue scaleValue) {
               setState(() {
                 provider.handleOptionsChanged(
                   widget.options.copyWith(textScaleFactor: scaleValue),

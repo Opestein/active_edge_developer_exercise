@@ -49,7 +49,7 @@ class ActiveEdgeAppState<B> extends State<ActiveEdgeApp<B>> {
           newLocale: application.supportedLocales().first),
       notification: false,
       theme: kLightGalleryTheme,
-      textScaleFactor: kAllGalleryTextScaleValues[0],
+      textScaleFactor: kAllActiveEdgeTextScaleValues[0],
       timeDilation: timeDilation,
       platform: defaultTargetPlatform,
     );

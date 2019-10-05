@@ -1,3 +1,6 @@
+import 'package:active_edge_developer_exercise/src/ui/album_screen/widgets/album_card.dart';
+import 'package:active_edge_developer_exercise/src/ui/artists_screen/widgets/header.dart';
+import 'package:active_edge_developer_exercise/src/utils/app_utilities.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -55,6 +58,33 @@ class AlbumScreenState extends State<AlbumScreen> {
       width: double.infinity,
       height: double.infinity,
       color: isDark ? Colors.black87 : Colors.white70,
+      child: Column(
+        children: <Widget>[
+          Header(widget.preferences, widget.client, "Albums"),
+          Spacer(),
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: safeAreaHeight(context, 80),
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return AlbumCard();
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1 / 1.2,
+                    crossAxisSpacing: 1,
+                    mainAxisSpacing: 5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Spacer(),
+        ],
+      ),
     );
   }
 }

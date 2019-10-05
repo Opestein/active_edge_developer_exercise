@@ -48,15 +48,15 @@ class _LanguageItemState extends State<LanguageItem> {
             ),
           ),
 //          Spacer(),
-          PopupMenuButton<TimbalaLanguages>(
+          PopupMenuButton<ActiveEdgeLanguages>(
             padding: const EdgeInsetsDirectional.only(end: 16.0),
             color: isDark ? primaryDarkColor : Colors.white,
             icon: const Icon(Icons.arrow_drop_down),
             itemBuilder: (BuildContext context) {
-              return kAllTimbalaLanguageValues
-                  .map<PopupMenuItem<TimbalaLanguages>>(
-                      (TimbalaLanguages languages) {
-                return PopupMenuItem<TimbalaLanguages>(
+              return kAllActiveEdgeLanguageValues
+                  .map<PopupMenuItem<ActiveEdgeLanguages>>(
+                      (ActiveEdgeLanguages languages) {
+                return PopupMenuItem<ActiveEdgeLanguages>(
                   value: languages,
                   child: Text(
                     languages.label,
@@ -64,7 +64,7 @@ class _LanguageItemState extends State<LanguageItem> {
                 );
               }).toList();
             },
-            onSelected: (TimbalaLanguages languages) {
+            onSelected: (ActiveEdgeLanguages languages) {
               setState(() {
                 index = languages.index;
                 provider.handleOptionsChanged(

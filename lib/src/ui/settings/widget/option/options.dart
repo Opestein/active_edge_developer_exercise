@@ -24,8 +24,8 @@ class SettingOptions {
 
   final AppTranslationsDelegate appTranslationsDelegate;
   final bool notification;
-  final TimbalaTheme theme;
-  final TimbalaTextScaleValue textScaleFactor;
+  final ActiveEdgeTheme theme;
+  final ActiveEdgeTextScaleValue textScaleFactor;
   final TextDirection textDirection;
   final double timeDilation;
   final TargetPlatform platform;
@@ -36,8 +36,8 @@ class SettingOptions {
   SettingOptions copyWith({
     AppTranslationsDelegate appTranslationsDelegate,
     bool notification,
-    TimbalaTheme theme,
-    TimbalaTextScaleValue textScaleFactor,
+    ActiveEdgeTheme theme,
+    ActiveEdgeTextScaleValue textScaleFactor,
     TextDirection textDirection,
     double timeDilation,
     TargetPlatform platform,

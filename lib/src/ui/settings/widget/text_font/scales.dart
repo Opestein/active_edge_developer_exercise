@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-class TimbalaTextScaleValue {
-  const TimbalaTextScaleValue(this.scale, this.label);
+class ActiveEdgeTextScaleValue {
+  const ActiveEdgeTextScaleValue(this.scale, this.label);
 
   final double scale;
   final String label;
@@ -13,7 +13,7 @@ class TimbalaTextScaleValue {
   @override
   bool operator ==(dynamic other) {
     if (runtimeType != other.runtimeType) return false;
-    final TimbalaTextScaleValue typedOther = other;
+    final ActiveEdgeTextScaleValue typedOther = other;
     return scale == typedOther.scale && label == typedOther.label;
   }
 
@@ -26,11 +26,11 @@ class TimbalaTextScaleValue {
   }
 }
 
-const List<TimbalaTextScaleValue> kAllGalleryTextScaleValues =
-    <TimbalaTextScaleValue>[
-  TimbalaTextScaleValue(null, 'System Default'),
-  TimbalaTextScaleValue(0.8, 'Small'),
-  TimbalaTextScaleValue(1.0, 'Normal'),
-  TimbalaTextScaleValue(1.2, 'Large'),
+const List<ActiveEdgeTextScaleValue> kAllActiveEdgeTextScaleValues =
+    <ActiveEdgeTextScaleValue>[
+  ActiveEdgeTextScaleValue(null, 'System Default'),
+  ActiveEdgeTextScaleValue(0.8, 'Small'),
+  ActiveEdgeTextScaleValue(1.0, 'Normal'),
+  ActiveEdgeTextScaleValue(1.2, 'Large'),
 //  TimbalaTextScaleValue(2.0, 'Huge'),
 ];
