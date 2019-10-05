@@ -8,12 +8,12 @@ void main() async {
   var preferences = await SharedPreferences.getInstance();
   var client = http.Client();
 
-  var configuredApp = TimbalaApp(
-      child: TimbalaHome(
+  var configuredApp = ActiveEdgeApp(
+      child: ActiveEdgeHome(
         preferences,
         client,
       ),
-      url: "https://timbala-api.herokuapp.com/api/v1/");
+      url: "https://jsonplaceholder.typicode.com/");
 
   runApp(configuredApp);
 }

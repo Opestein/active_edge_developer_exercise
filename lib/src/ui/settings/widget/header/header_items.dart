@@ -26,7 +26,7 @@ class _HeaderItemState extends State<HeaderItem> {
 
     final bool isDark = theme.brightness == Brightness.dark;
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24),

@@ -26,7 +26,7 @@ class _LanguageItemState extends State<LanguageItem> {
     ThemeData theme = Theme.of(context);
     final bool isDark = theme.brightness == Brightness.dark;
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
     return OptionsItem(
       child: Row(

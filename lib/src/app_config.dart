@@ -7,14 +7,14 @@ class AppConfig<B> extends InheritedWidget {
   final B bloc;
   final String replacementUrlA;
   final String replacementUrlB;
-  final TimbalaAppState timbalaAppState;
+  final ActiveEdgeAppState activeEdgeAppState;
 
   const AppConfig({
     Key key,
     this.bloc,
     this.replacementUrlA,
     this.replacementUrlB,
-    this.timbalaAppState,
+    this.activeEdgeAppState,
     Widget child,
   }) : super(key: key, child: child);
 

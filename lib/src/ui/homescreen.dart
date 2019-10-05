@@ -26,8 +26,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   int _selectedDrawerIndex = 0;
 
-//  TapGestureRecognizer _tapPressRecognizer;
-
   @override
   void initState() {
     super.initState();

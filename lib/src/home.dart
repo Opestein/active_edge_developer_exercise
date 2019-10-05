@@ -13,29 +13,22 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TimbalaHome extends StatefulWidget {
+class ActiveEdgeHome extends StatefulWidget {
   final SharedPreferences preferences;
   final http.Client client;
 
-  const TimbalaHome(this.preferences, this.client, {Key key
-
-//    this.testMode = false,
-//    this.optionsPage,
-      })
+  const ActiveEdgeHome(this.preferences, this.client, {Key key})
       : super(key: key);
-
-//  final Widget optionsPage;
-//  final bool testMode;
 
   // In checked mode our MaterialApp will show the default "debug" banner.
   // Otherwise show the "preview" banner.
   static bool showPreviewBanner = true;
 
   @override
-  _TimbalaHomeState createState() => _TimbalaHomeState();
+  _ActiveEdgeHomeState createState() => _ActiveEdgeHomeState();
 }
 
-class _TimbalaHomeState extends State<TimbalaHome> {
+class _ActiveEdgeHomeState extends State<ActiveEdgeHome> {
   SettingOptions options;
 
   @override
@@ -53,7 +46,7 @@ class _TimbalaHomeState extends State<TimbalaHome> {
     final ThemeData theme = Theme.of(context);
     final bool isDark = theme.brightness == Brightness.dark;
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
     options = provider.options;
     return MaterialApp(

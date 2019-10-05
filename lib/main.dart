@@ -8,14 +8,12 @@ void main() async {
   var preferences = await SharedPreferences.getInstance();
   var client = http.Client();
 
-  var configuredApp = TimbalaApp(
-      child: TimbalaHome(
+  var configuredApp = ActiveEdgeApp(
+      child: ActiveEdgeHome(
         preferences,
         client,
       ),
-      url: "nothing-here"
-//  ),
-      );
+      url: "https://jsonplaceholder.typicode.com/");
 
   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
   runApp(configuredApp);

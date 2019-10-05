@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:active_edge_developer_exercise/src/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:timbala/src/utils/colors.dart';
 
 class TimbalaTheme {
   const TimbalaTheme._(this.name, this.data);

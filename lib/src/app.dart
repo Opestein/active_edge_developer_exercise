@@ -11,34 +11,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 String replacementUrlA;
-//String replacementUrlB;
 
-//PackageInfo packageInfo;
-
-final RouteObserver<PageRoute> routeObserver = new RouteObserver<PageRoute>();
-
-class TimbalaApp<B> extends StatefulWidget {
+class ActiveEdgeApp<B> extends StatefulWidget {
   final void Function(BuildContext context, B bloc) onDispose;
   final B Function(BuildContext context, B bloc) builder;
   final Widget child;
   final String url;
 
-  static TimbalaAppState of(BuildContext context) {
+  static ActiveEdgeAppState of(BuildContext context) {
     return (context.inheritFromWidgetOfExactType(AppConfig) as AppConfig)
-        .timbalaAppState;
+        .activeEdgeAppState;
   }
 
-  TimbalaApp({
+  ActiveEdgeApp({
     Key key,
     @required this.child,
     this.builder,
     this.onDispose,
     this.url,
   }) : super(key: key);
-  createState() => TimbalaAppState<B>();
+  createState() => ActiveEdgeAppState<B>();
 }
 
-class TimbalaAppState<B> extends State<TimbalaApp<B>> {
+class ActiveEdgeAppState<B> extends State<ActiveEdgeApp<B>> {
   SettingOptions options;
   Timer timeDilationTimer;
   B bloc;
@@ -112,7 +107,7 @@ class TimbalaAppState<B> extends State<TimbalaApp<B>> {
 
     return AppConfig(
       bloc: bloc,
-      timbalaAppState: this,
+      activeEdgeAppState: this,
       child: widget.child,
     );
   }

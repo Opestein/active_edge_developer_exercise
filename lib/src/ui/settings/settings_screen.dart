@@ -132,7 +132,7 @@ class SettingScreenState extends State<SettingScreen> {
                 Colors.white //or set color with: Color(0xFF0000FF)
             ));
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
 //    final provider = WorkwiseApp.of(context).options;
 

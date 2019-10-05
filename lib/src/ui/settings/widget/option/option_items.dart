@@ -25,7 +25,7 @@ class _OptionItemState extends State<OptionItem> {
 
     final bool isDark = theme.brightness == Brightness.dark;
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24),

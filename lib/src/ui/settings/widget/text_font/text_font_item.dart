@@ -5,7 +5,6 @@ import 'package:active_edge_developer_exercise/src/ui/settings/widget/text_font/
 import 'package:active_edge_developer_exercise/src/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-
 class TextScaleFactorItem extends StatefulWidget {
   const TextScaleFactorItem(
     this.options,
@@ -24,7 +23,7 @@ class _TextScaleFactorItemState extends State<TextScaleFactorItem> {
 
     final bool isDark = theme.brightness == Brightness.dark;
 
-    final provider = TimbalaApp.of(context);
+    final provider = ActiveEdgeApp.of(context);
 
     return OptionsItem(
       child: Row(
