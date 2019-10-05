@@ -50,7 +50,8 @@ class HomeScreenState extends State<HomeScreen> {
       case 2:
         return TweetScreen(
           widget.preferences,
-          widget.client,);
+          widget.client,
+        );
 
       default:
         return ArtistsScreen(
