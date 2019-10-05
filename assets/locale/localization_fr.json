@@ -1,0 +1,70 @@
+{
+
+
+  "sign_up": "Sign Up",
+  "login": "Login",
+  "log_in": "Log in",
+  "logout": "Logout",
+  "password": "Password",
+  "dont_have_account": "Don't have an account?",
+  "forgot_password": "Forgot Password?",
+  "choose_who_you_are": "Please choose who you are!",
+
+
+  "email": "Email address",
+  "phone_number": "Phone number",
+  "name": "Name",
+  "confirm_password": "Confirm Password",
+  "change_password": "Change Password",
+  "proceed": "Proceed",
+  "update": "Update",
+  "upload": "Upload",
+  "notification": "Notification",
+  "remember_me_text" : "Remember me",
+  "login_process_text" : "Logging in.....",
+
+
+
+  "create_job_button_text": "Post Job",
+  "save": "Save",
+  "bio": "Bio",
+  "edit_profile": "Edit Profile",
+  "change_pic": "Change pic",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "formatted_date": "year-month-day",
+  "error": "error",
+  "settings": "Settings",
+  "start": "Start",
+  "skip": "Skip",
+  "next": "Next",
+  "previous": "Previous",
+  "loading": "Loading",
+  "fetching": "Fetching data...",
+
+
+  "language": "Language",
+  "dark_mode": "Dark Mode",
+  "change_language": "Change Language",
+  "text_size": "Text Size",
+
+  "phone": "Phone",
+  "number": "Number",
+
+  "address": "Address",
+  "female": "Female",
+  "male": "Male",
+  "date_of_birth": "Date of birth",
+  "account": "Account",
+  "options": "Options",
+
+
+
+
+  "profile": "Profile",
+
+  "nav_titles" : [
+    "error", "save", "cancel", "exit"
+  ]
+
+}

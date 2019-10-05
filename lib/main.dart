@@ -1,6 +1,25 @@
+import 'package:active_edge_developer_exercise/src/app.dart';
+import 'package:active_edge_developer_exercise/src/home.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  var preferences = await SharedPreferences.getInstance();
+  var client = http.Client();
+
+  var configuredApp = TimbalaApp(
+      child: TimbalaHome(
+        preferences,
+        client,
+      ),
+      url: "nothing-here"
+//  ),
+      );
+
+  ErrorWidget.builder = (FlutterErrorDetails details) => Container();
+  runApp(configuredApp);
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -75,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
+          // Column is also layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
           // children horizontally, and tries to be as tall as its parent.
           //
