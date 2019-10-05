@@ -2,18 +2,16 @@ import 'dart:convert';
 
 import 'package:active_edge_developer_exercise/src/bloc/app_settings_bloc.dart';
 import 'package:active_edge_developer_exercise/src/data/server_provider/base_url.dart';
-import 'package:active_edge_developer_exercise/src/model/all_artiste.dart';
+import 'package:active_edge_developer_exercise/src/model/album_photos.dart';
 import 'package:active_edge_developer_exercise/src/model/app_settings.dart';
 import 'package:active_edge_developer_exercise/src/utils/operation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class _AllArtistsProvider {
+class _AllArtistsPhotoProvider {
   Future<Operation> fetch(
-    SharedPreferences preferences,
-    http.Client client,
-  ) async {
-    final url = baseUrlV1 + "users";
+      SharedPreferences preferences, http.Client client, id) async {
+    final url = baseUrlV1 + "albums/$id/photos";
 
     print(url);
     print("over");
@@ -34,7 +32,7 @@ class _AllArtistsProvider {
     if (response.statusCode == 200) {
       final responseJson = json.decode(response.body);
 
-      var allArtists = AllArtists.fromJson(responseJson);
+      var allArtists = AlbumPhotos.fromJson(responseJson);
 
       return Operation(response.statusCode, allArtists);
     } else {
@@ -46,4 +44,4 @@ class _AllArtistsProvider {
   }
 }
 
-final allArtistsProvider = _AllArtistsProvider();
+final allArtistsPhotosProvider = _AllArtistsPhotoProvider();

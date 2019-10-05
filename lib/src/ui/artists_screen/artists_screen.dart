@@ -1,7 +1,6 @@
-import 'package:active_edge_developer_exercise/src/ui/artists_screen/widgets/header.dart';
-import 'package:active_edge_developer_exercise/src/utils/app_utilities.dart';
-import 'package:active_edge_developer_exercise/src/utils/assets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:active_edge_developer_exercise/src/app_config.dart';
+import 'package:active_edge_developer_exercise/src/bloc/all_artists_bloc.dart';
+import 'package:active_edge_developer_exercise/src/bloc/all_artists_photos_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -55,52 +54,53 @@ class ArtistsScreenState extends State<ArtistsScreen> {
 // 7-inch tablet.
     final bool useMobileLayout = shortestSide < 600;
 
+    var artistBloc = AppConfig.of<AllArtistsBloc>(context);
+    var artistPhotosBloc = AppConfig.of<AllArtistsPhotosBloc>(context);
+
     return Container(
       width: double.infinity,
       height: double.infinity,
       color: isDark ? Colors.black87 : Colors.white,
       child: Column(
         children: <Widget>[
-          Header(widget.preferences, widget.client, "Artists"),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: safeAreaHeight(context, 50),
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.grey),
-                            child: CachedNetworkImage(
-                              imageUrl: "",
-                              placeholder: (context, value) =>
-                                  Image.asset(Assets.logo),
-                            ),
-                          ),
-                          title: Text("Artiste Name",
-                              style: theme.primaryTextTheme.title),
-                          subtitle: Text("Album Name"),
-                          trailing: Icon(Icons.more_vert),
-                        );
-                      }),
-                )
-              ],
-            ),
-          ),
+//          Header(widget.preferences, widget.client, "Artists"),
+//          SizedBox(
+//            height: 20,
+//          ),
+//          Padding(
+//            padding: EdgeInsets.symmetric(horizontal: 18),
+//            child: Column(
+//              crossAxisAlignment: CrossAxisAlignment.start,
+//              children: <Widget>[
+//                SizedBox(
+//                  height: 10,
+//                ),
+//                StreamBuilder<AllArtists>(
+//                    stream: artistBloc.behaviorSubject.stream,
+//                    builder: (context, snapshot) {
+//                      if (snapshot.hasData) {
+//                        return SizedBox(
+//                          height: safeAreaHeight(context, 75),
+//                          child: ListView.builder(
+//                              shrinkWrap: true,
+//                              itemCount: 10,
+//                              itemBuilder: (context, index) {
+//                                return ListTile(
+//                                  title: Text(snapshot.data.name,
+//                                      style: theme.primaryTextTheme.title),
+//                                  subtitle: Text(snapshot.data.phone),
+//                                  trailing: Icon(Icons.more_vert),
+//                                );
+//                              }),
+//                        );
+//                      } else {
+//                        return Container();
+//                      }
+//                    }),
+////                Spacer(),
+//              ],
+//            ),
+//          ),
         ],
       ),
     );

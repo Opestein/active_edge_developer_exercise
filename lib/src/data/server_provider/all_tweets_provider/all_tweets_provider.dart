@@ -13,7 +13,7 @@ class _AllArtistsProvider {
     SharedPreferences preferences,
     http.Client client,
   ) async {
-    final url = baseUrlV1 + "users";
+    final url = baseUrlV1 + "job-board";
 
     print(url);
     print("over");

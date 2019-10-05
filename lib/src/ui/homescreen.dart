@@ -1,3 +1,5 @@
+import 'package:active_edge_developer_exercise/src/app.dart';
+import 'package:active_edge_developer_exercise/src/bloc/all_artists_bloc.dart';
 import 'package:active_edge_developer_exercise/src/ui/album_screen/album_screen.dart';
 import 'package:active_edge_developer_exercise/src/ui/artists_screen/artists_screen.dart';
 import 'package:active_edge_developer_exercise/src/ui/tweet_screen/tweet_screen.dart';
@@ -85,72 +87,78 @@ class HomeScreenState extends State<HomeScreen> {
 // 7-inch tablet.
     final bool useMobileLayout = shortestSide < 600;
 
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: lightGrey,
-        key: globalKey,
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: _getBottomItemWidget(_selectedDrawerIndex),
-            ),
-          ],
-        ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            color: isDark ? black87Color : white,
+    return ActiveEdgeApp<AllArtistsBloc>(
+      builder: (_, bloc) =>
+          bloc ?? AllArtistsBloc(widget.preferences, widget.client, "", "", ""),
+      onDispose: (_, bloc) => bloc.dispose(),
+      child: SafeArea(
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          backgroundColor: lightGrey,
+          key: globalKey,
+          body: Column(
+            children: <Widget>[
+
+                 _getBottomItemWidget(_selectedDrawerIndex),
+
+            ],
           ),
-          child: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              selectedItemColor: isDark ? primaryDarkColorTrans : primaryColor,
-              backgroundColor: isDark ? black87Color : white,
-              unselectedItemColor:
-                  isDark ? primaryDarkColor : primaryColorTrans,
-              unselectedLabelStyle: TextStyle(
-                color: isDark ? primaryDarkColor : primaryColorTrans,
-              ),
-              showSelectedLabels: true,
-              showUnselectedLabels: true,
-              currentIndex: _selectedDrawerIndex,
-              onTap: (index) => onSelectItem(index),
-              items: [
-                BottomNavigationBarItem(
-                  icon: Padding(
-                    padding: const EdgeInsets.only(top: 2.0, left: 4.0),
-                    child: Icon(Icons.person_outline),
-                  ),
-                  title: Text(
-                    "Artiste",
-                    style: TextStyle(
-                      fontSize: 15.0,
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              color: isDark ? black87Color : white,
+            ),
+            child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor:
+                    isDark ? primaryDarkColorTrans : primaryColor,
+                backgroundColor: isDark ? black87Color : white,
+                unselectedItemColor:
+                    isDark ? primaryDarkColor : primaryColorTrans,
+                unselectedLabelStyle: TextStyle(
+                  color: isDark ? primaryDarkColor : primaryColorTrans,
+                ),
+                showSelectedLabels: true,
+                showUnselectedLabels: true,
+                currentIndex: _selectedDrawerIndex,
+                onTap: (index) => onSelectItem(index),
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Padding(
+                      padding: const EdgeInsets.only(top: 2.0, left: 4.0),
+                      child: Icon(Icons.person_outline),
+                    ),
+                    title: Text(
+                      "Artiste",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                      ),
                     ),
                   ),
-                ),
-                BottomNavigationBarItem(
-                  icon: Padding(
-                    padding: const EdgeInsets.only(top: 2.0, left: 4.0),
-                    child: Icon(Icons.album),
-                  ),
-                  title: Text(
-                    "Albums",
-                    style: TextStyle(
-                      fontSize: 15.0,
+                  BottomNavigationBarItem(
+                    icon: Padding(
+                      padding: const EdgeInsets.only(top: 2.0, left: 4.0),
+                      child: Icon(Icons.album),
+                    ),
+                    title: Text(
+                      "Albums",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                      ),
                     ),
                   ),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.comment,
-                  ),
-                  title: Text(
-                    "Tweet",
-                    style: TextStyle(
-                      fontSize: 15.0,
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.comment,
+                    ),
+                    title: Text(
+                      "Tweet",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                      ),
                     ),
                   ),
-                ),
-              ]),
+                ]),
+          ),
         ),
       ),
     );

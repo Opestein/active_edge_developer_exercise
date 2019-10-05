@@ -8,12 +8,12 @@ import 'package:active_edge_developer_exercise/src/utils/operation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class _AllArtistsProvider {
+class _DeleteTweetProvider {
   Future<Operation> fetch(
     SharedPreferences preferences,
     http.Client client,
   ) async {
-    final url = baseUrlV1 + "users";
+    final url = baseUrlV1 + "job-board";
 
     print(url);
     print("over");
@@ -46,4 +46,4 @@ class _AllArtistsProvider {
   }
 }
 
-final allArtistsProvider = _AllArtistsProvider();
+final deleteTweetProvider = _DeleteTweetProvider();
